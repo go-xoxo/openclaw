@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GitHub Haskell XY Blink</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --grid: #213042;
+  --ink: #d8f3dc;
+  --prime: #80ed99;
+  --mixed: #ffd166;
+  --axis: #8ecae6;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(128, 237, 153, 0.15), transparent 40%),
+    linear-gradient(180deg, #071018 0%, var(--bg) 100%);
+  color: var(--ink);
+  font-family: Consolas, "Courier New", monospace;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.plot {
+  position: relative;
+  height: 72vh;
+  border: 1px solid var(--grid);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 10% 10%;
+  overflow: hidden;
+}
+.axis {
+  position: absolute;
+  color: var(--axis);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.axis.x { bottom: 8px; right: 12px; }
+.axis.y { top: 12px; left: 12px; }
+.point {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  transform: translate(-50%, 50%);
+  animation: blink 1.1s steps(2, start) infinite;
+  box-shadow: 0 0 18px currentColor;
+}
+.point span {
+  position: absolute;
+  top: -22px;
+  left: 12px;
+  white-space: nowrap;
+  font-size: 11px;
+  color: var(--ink);
+}
+.point.prime { color: var(--prime); background: var(--prime); }
+.point.mixed { color: var(--mixed); background: var(--mixed); }
+@keyframes blink {
+  50% { opacity: 0.18; transform: translate(-50%, 50%) scale(0.7); }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>GitHub Haskell XY Blink</h1>
+<p>query: <code>language:Haskell stars:&gt;500</code></p>
+<p>x = repo stars, y = file bytes, green = both prime, yellow = mixed.</p>
+<div class="plot">
+<div class="axis y">y bytes</div>
+<div class="axis x">x stars</div>
+<a class="point mixed" style="left:96.0%;bottom:92.0%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Writers/LaTeX.hs" title="jgm/pandoc :: src/Text/Pandoc/Writers/LaTeX.hs :: (42550, 63924)"><span>42550+63924i</span></a><a class="point mixed" style="left:96.0%;bottom:85.44%;" href="https://github.com/jgm/pandoc/blob/main/test/Tests/Readers/Muse.hs" title="jgm/pandoc :: test/Tests/Readers/Muse.hs :: (42550, 59162)"><span>42550+59162i</span></a><a class="point mixed" style="left:96.0%;bottom:84.65%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/Docx/Parse.hs" title="jgm/pandoc :: src/Text/Pandoc/Readers/Docx/Parse.hs :: (42550, 58582)"><span>42550+58582i</span></a><a class="point mixed" style="left:96.0%;bottom:78.46%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/App/CommandLineOptions.hs" title="jgm/pandoc :: src/Text/Pandoc/App/CommandLineOptions.hs :: (42550, 54088)"><span>42550+54088i</span></a><a class="point mixed" style="left:96.0%;bottom:77.29%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/LaTeX.hs" title="jgm/pandoc :: src/Text/Pandoc/Readers/LaTeX.hs :: (42550, 53237)"><span>42550+53237i</span></a><a class="point mixed" style="left:96.0%;bottom:76.06%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Citeproc/BibTeX.hs" title="jgm/pandoc :: src/Text/Pandoc/Citeproc/BibTeX.hs :: (42550, 52343)"><span>42550+52343i</span></a><a class="point mixed" style="left:96.0%;bottom:73.3%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Writers/Powerpoint/Presentation.hs" title="jgm/pandoc :: src/Text/Pandoc/Writers/Powerpoint/Presentation.hs :: (42550, 50341)"><span>42550+50341i</span></a><a class="point mixed" style="left:96.0%;bottom:69.54%;" href="https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/Mdoc.hs" title="jgm/pandoc :: src/Text/Pandoc/Readers/Mdoc.hs :: (42550, 47611)"><span>42550+47611i</span></a><a class="point mixed" style="left:88.52%;bottom:79.6%;" href="https://github.com/koalaman/shellcheck/blob/master/src/ShellCheck/CFGAnalysis.hs" title="koalaman/shellcheck :: src/ShellCheck/CFGAnalysis.hs :: (39092, 54915)"><span>39092+54915i</span></a><a class="point mixed" style="left:88.52%;bottom:71.84%;" href="https://github.com/koalaman/shellcheck/blob/master/src/ShellCheck/CFG.hs" title="koalaman/shellcheck :: src/ShellCheck/CFG.hs :: (39092, 49282)"><span>39092+49282i</span></a>
+</div>
+</main>
+</body>
+</html>

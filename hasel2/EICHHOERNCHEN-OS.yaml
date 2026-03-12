@@ -1,0 +1,21 @@
+name: EICHHOERNCHEN-OS
+werk: xoxo-go/daswerk
+engine: Hasel 2.0
+version: 0.0.1
+profile: hasel2-local
+root: C:/Users/frits/.codex/memories/openclaw/hasel2
+modules:
+  adapters: ADAPTERS.yaml
+  bio: BIO.md
+  werk: xoxo-go/daswerk.md
+  corpus: artifacts/github_haskell_samples.md
+  gists: artifacts/gists/index.md
+  blink: artifacts/github_haskell_blink.html
+boot:
+  - cd C:/Users/frits/.codex/memories/openclaw/hasel2
+  - python .\python\github_haskell_xy.py --scan-mode tree --repo-limit 2 --file-limit 10 --per-query 8 --min-bytes 12000 --max-bytes 65536 --download-limit 6 --extensions hs,cabal
+  - .\verify.ps1
+policy:
+  public_publish: false
+  big_changes: false
+  local_first: true

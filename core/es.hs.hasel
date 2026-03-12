@@ -1,0 +1,8 @@
+# Hasel 2.0
+
+Pure markdown.
+
+- `*h*` means Everything wildcard.
+- `.*h.*` means regex.
+- `λx.x` means lambda calculus.
+- `es.hs.hasel` stays the file name.

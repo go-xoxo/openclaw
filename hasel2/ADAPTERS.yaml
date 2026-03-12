@@ -1,0 +1,42 @@
+project: xoxo-go/daswerk
+engine: Hasel 2.0
+repo_root: C:/Users/frits/.codex/memories/openclaw/hasel2
+status: local-polyglot-adapter-pack
+brand_tags: [utf8, emojis, hasel, haskell, ghc, grok, codex]
+adapters:
+  - language: haskell
+    entry: haskell/Main.hs
+    run: runghc .\haskell\Main.hs
+    role: canonical text adapter
+  - language: typescript
+    entry: typescript/main.ts
+    run: bun run .\typescript\main.ts
+    role: node-edge adapter
+  - language: python
+    entry: python/main.py
+    run: python .\python\main.py
+    role: scripting adapter
+  - language: rust
+    entry: rust/src/main.rs
+    run: cargo run --quiet --manifest-path .\rust\Cargo.toml
+    role: native adapter
+  - language: go
+    entry: go/main.go
+    run: go run .\go\main.go
+    role: fast cli adapter
+  - language: purescript
+    entry: purescript/src/Main.purs
+    run: spago run
+    role: typed frontend-style adapter
+haskell_corpus:
+  samples_markdown: artifacts/github_haskell_samples.md
+  samples_json: artifacts/github_haskell_samples.json
+  xy_points: artifacts/github_haskell_xy.tsv
+  complex_points: artifacts/github_haskell_complex.tsv
+  blink_view: artifacts/github_haskell_blink.html
+  local_gists: artifacts/gists/index.md
+  local_downloads: artifacts/downloads
+notes:
+  - no public upload was done
+  - adapters stay small and local
+  - hs code is available through artifacts/downloads and artifacts/gists

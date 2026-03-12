@@ -1,0 +1,7 @@
+profiles:
+  fast:
+    output: spider_dedupe-fast.exe
+    ghc_options: [-fforce-recomp, -O0, -threaded, -package, bytestring, -package, containers, -package, directory, -package, filepath, -package, text]
+  release:
+    output: spider_dedupe.exe
+    ghc_options: [-O2, -threaded, -package, bytestring, -package, containers, -package, directory, -package, filepath, -package, text]

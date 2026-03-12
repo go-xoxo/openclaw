@@ -1,0 +1,8 @@
+package:
+  name: hasel2-purescript
+  dependencies:
+    - console
+    - effect
+    - maybe
+    - node-process
+    - prelude

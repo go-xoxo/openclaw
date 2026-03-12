@@ -1,0 +1,47 @@
+{
+  "name": "github-gh-api-local",
+  "transport": "stdio",
+  "description": "Local MCP-style skeleton that wraps gh api for read-only GitHub access.",
+  "constraints": {
+    "mode": "read-only",
+    "no_publish": true,
+    "repo_root_warning": "C:/Users/frits is the current git root"
+  },
+  "tools": [
+    {
+      "name": "github_repo_get",
+      "description": "Fetch repository metadata",
+      "command": "gh api repos/{owner}/{repo}"
+    },
+    {
+      "name": "github_repo_search",
+      "description": "Search repositories",
+      "command": "gh api \"search/repositories?q={query}\""
+    },
+    {
+      "name": "github_code_search",
+      "description": "Search code",
+      "command": "gh api \"search/code?q={query}\""
+    },
+    {
+      "name": "github_tree_get",
+      "description": "Fetch a recursive git tree",
+      "command": "gh api repos/{owner}/{repo}/git/trees/{sha}?recursive=1"
+    },
+    {
+      "name": "github_contents_get",
+      "description": "Fetch file contents metadata",
+      "command": "gh api repos/{owner}/{repo}/contents/{path}"
+    },
+    {
+      "name": "github_graphql",
+      "description": "Run a GraphQL query",
+      "command": "gh api graphql -f query=@query.graphql"
+    },
+    {
+      "name": "github_gist_create_disabled",
+      "description": "Intentionally disabled until publish is explicitly approved",
+      "command": "disabled"
+    }
+  ]
+}
